@@ -1,0 +1,105 @@
+.main-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.backgroundImage{
+    background-image: url("../assets/firstpagebackground.jpg");
+    background-color: #cccccc;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+
+/* Navigation menu */
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navigation-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-menu li {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-menu li:hover,
+.navigation-menu li.active {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* White box for content */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Push content below navbar */
+}
+
+.white-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    overflow-y: auto;
+}
+
+.white-box h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.white-box p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.white-box ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    color: #555;
+}
+
+.white-box li {
+    margin-bottom: 10px;
+}
+
+.white-box a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.white-box a:hover {
+    text-decoration: underline;
+}

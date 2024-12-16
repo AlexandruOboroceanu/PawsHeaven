@@ -1,0 +1,244 @@
+#root {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Title {
+    position: absolute;
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    font-size: 3rem;
+    color: #F29F58; 
+    text-align: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    background-color: #fff0f5; 
+    letter-spacing: 2px; 
+    width: 100%; 
+    top: 20px;
+    left: 0px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 50px;
+    height: 500px;
+    width: 500px;
+    background: #fff;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    position: relative;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .text {
+    color: #F29F58;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  
+  .underline {
+    width: 300px;
+    height: 6px;
+    background: #F29F58;
+    border-radius: 9px;
+    margin-bottom: 10px;
+  }
+  
+  .inputs {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+    height: 50px;
+    background: #eaeaea;
+    border-radius: 6px;
+  }
+  
+  .input img {
+    margin: 0px 10px;
+  }
+  
+  .input input {
+    height: 15px;
+    width: 300px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+  }
+  
+  .forgot-password {
+    padding-left: 20px;
+    margin-top: 20px;
+    color: #797979;
+    font-size: 18px;
+  }
+  
+  .forgot-password span {
+    color: #F29F58;
+    cursor: pointer;
+  }
+  
+  .submit-container {
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+  }
+  
+  .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px; /* Reduced width */
+    height: 50px; /* Adjusted height for balance */
+    color: #fff;
+    background: #F29F58;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+#box {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+.cat {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    top: -100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    z-index: -900;
+    opacity: 1;
+}
+
+.head {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.ear-left{
+  position: absolute;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: -900;
+}
+
+.ear-right{
+  position: absolute;
+  top: 5px;
+  left: 80px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: -900;
+}
+
+.eye-left, .eye-right {
+  position: absolute;
+  top: 45px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(230, 217, 45);
+  border-radius: 50%;
+}
+
+.eye-left {
+  left: 35px;
+}
+
+.eye-right {
+  right: 15px;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+  width: 20px;
+  height: 10px;
+  top: 60px;
+  border-radius: 0 0 10px 10px;
+  opacity: 0.1;
+}
+
+.whiskers-left, .whiskers-right {
+  position: absolute;
+  top: 30px;
+}
+
+.whiskers-left {
+  left: -20px;
+  top: 50px;
+}
+
+.whiskers-right {
+  right: -24px;
+  top: 70px;
+  transform: rotate(180deg);
+}
+
+.whisker {
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: black;
+}
+
+.whisker:nth-child(1) {
+  top: 0;
+  transform: rotate(15deg);
+}
+
+.whisker:nth-child(2) {
+  top: 10px;
+  transform: rotate(0deg);
+}
+
+.whisker:nth-child(3) {
+  top: 20px;
+  transform: rotate(-15deg);
+}
+
+.gray{
+  background: #EAEAEA;
+  color: #676767;
+}
