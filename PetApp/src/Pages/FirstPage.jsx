@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import './FirstPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const FirstPage = () => {
     const [activeSection, setActiveSection] = useState('Home');
+    const navigate = useNavigate();
+
+    const handleAdoptionRedirect = () => {
+        navigate('/AdoptionPage');
+    };
 
     const renderContent = () => {
         switch (activeSection) {
@@ -29,18 +35,6 @@ const FirstPage = () => {
                             Paws Haven Animal Shelter Application is designed to bridge the gap between doctors managing 
                             shelters and customers who want to adopt or collect their pets. 
                         </p>
-                        <h3>Key Features:</h3>
-                        <ul>
-                            <li>
-                                <strong>For Doctors:</strong> Easily update the status of animals, mark them as 
-                                available for adoption, or remove them when they've found a new home. You can also schedule 
-                                appointments for customers to pick up their pets.
-                            </li>
-                            <li>
-                                <strong>For Customers:</strong> View a list of adorable animals available for adoption. 
-                                If your pet is already in the shelter, check the date and time for when you can pick them up.
-                            </li>
-                        </ul>
                         <p>
                             Our platform includes essential details like animal names, breeds, owner information, 
                             shelter joining dates, and unique codes, ensuring transparency and efficient management.
@@ -61,22 +55,15 @@ const FirstPage = () => {
                                 Detailed profiles include names, breeds, and pictures to help you find your perfect match.
                             </li>
                             <li>
-                                <strong>Appointment Scheduling:</strong> Doctors can set specific dates and times for 
-                                customers to pick up their animals, ensuring an organized experience for all.
-                            </li>
-                            <li>
                                 <strong>Animal Management:</strong> Doctors can update animal statuses, whether they're 
                                 available for adoption, already adopted, or scheduled for pickup.
-                            </li>
-                            <li>
-                                <strong>User Registration:</strong> Both doctors and customers can register with a unique 
-                                username and password, ensuring personalized and secure access.
                             </li>
                         </ul>
                         <p>
                             Paws Haven simplifies shelter operations and improves communication between doctors and customers, 
                             making it easier to provide loving care for every animal.
                         </p>
+                        <button onClick={handleAdoptionRedirect}>Make an Adoption</button> {/* Button for redirection */}
                     </div>
                 );
             case 'Contact':
@@ -99,30 +86,29 @@ const FirstPage = () => {
                 return <p>Welcome to Paws Haven!</p>;
         }
     };
-    
 
     return (
         <div className='backgroundImage'>
-        <div className="main-page">
-            <div className="navigation-menu">
-                <ul>
-                    {['Home', 'About', 'Services', 'Contact'].map((section) => (
-                        <li
-                            key={section}
-                            className={activeSection === section ? 'active' : ''}
-                            onClick={() => setActiveSection(section)}
-                        >
-                            {section}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="content">
-                <div className="white-box">
-                    {renderContent()}
+            <div className="main-page">
+                <div className="navigation-menu">
+                    <ul>
+                        {['Home', 'About', 'Services', 'Contact'].map((section) => (
+                            <li
+                                key={section}
+                                className={activeSection === section ? 'active' : ''}
+                                onClick={() => setActiveSection(section)}
+                            >
+                                {section}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="content">
+                    <div className="white-box">
+                        {renderContent()}
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 };

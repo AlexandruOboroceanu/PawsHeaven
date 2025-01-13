@@ -4,6 +4,8 @@ import './LoginSingup.css';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase.js'; 
 import './LoginSingup.css';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
 
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
@@ -24,7 +26,7 @@ export const LoginSingup = () => {
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         console.log('User signed up:', userCredential.user);
-        navigate('/main'); // Redirect to the main page
+        navigate('/main');
       } catch (error) {
         console.error('Error signing up:', error.message);
         alert(error.message);
@@ -36,6 +38,17 @@ export const LoginSingup = () => {
       return;
     }
     navigate('/main');
+  };
+  const handleGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log('Google sign-in successful:', result.user);
+      navigate('/main'); // Redirect to the main page
+    } catch (error) {
+      console.error('Error during Google sign-in:', error.message);
+      alert('Failed to sign in with Google.');
+    }
   };
 
   return (
@@ -121,6 +134,11 @@ export const LoginSingup = () => {
             }
           >
             {action === 'Sign Up' ? 'Switch to Login' : 'Switch to Sign Up'}
+            <div>
+              <button onClick={handleGoogle} className='googleButton'>
+                Sign In Using Google
+              </button> 
+            </div>
           </div>
         </div>
       </div>

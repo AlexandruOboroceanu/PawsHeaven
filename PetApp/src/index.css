@@ -5,6 +5,8 @@ body {
   -moz-osx-font-smoothing: greyscale;
   height: 100vh;
   background: linear-gradient(#F29F58, #441752);
+  background-attachment: fixed; 
+  background-size: cover; 
 }
 
 code{
